@@ -6,7 +6,7 @@ import (
 
 func TestOrigin(t *testing.T) {
 
-	snd, err := New("origin")
+	snd, err := New()
 	if err != nil {
 		t.Fatal("origin algorithm not found")
 	}

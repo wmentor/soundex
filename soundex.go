@@ -10,15 +10,31 @@ var (
 	ErrEmptyString          error = errors.New("empty string")
 )
 
+const (
+	AlgoOrigin uint64 = 1 << iota
+	AlgoImproved
+)
+
 type Soundex interface {
 	Code(string) (string, error)
 }
 
-func New(algo string) (Soundex, error) {
+func New(algorithm ...uint64) (Soundex, error) {
 
-	switch algo {
-	case "origin", "":
+	alg := AlgoOrigin
+
+	if len(algorithm) > 1 {
+		return nil, ErrUnsupportedAlgorithm
+	} else if len(algorithm) == 1 {
+		alg = algorithm[0]
+	}
+
+	switch alg {
+	case AlgoOrigin:
 		return &soundexOrigin{}, nil
+
+	case AlgoImproved:
+		return &soundexImproved{}, nil
 
 	default:
 		return nil, ErrUnsupportedAlgorithm
