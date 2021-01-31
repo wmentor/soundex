@@ -1,3 +1,3 @@
 module github.com/wmentor/soundex
 
-go 1.15
+go 1.14

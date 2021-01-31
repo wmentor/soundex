@@ -27,6 +27,8 @@ func TestOrigin(t *testing.T) {
 	tF("ashcroft", "A261", nil)
 	tF("tymczak", "T522", nil)
 	tF("morphs", "M612", nil)
+	tF("miller", "M460", nil)
+	tF("muller", "M460", nil)
 	tF("a", "A000", nil)
 	tF("pa", "P000", nil)
 	tF("pap", "P100", nil)
