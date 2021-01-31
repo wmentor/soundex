@@ -2,7 +2,7 @@
 
 Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English. The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling.
 
-This library is a go implementation of the Soundex algorithm.
+This library is a Go implementation of the Soundex algorithm.
 
 # Summary
 
